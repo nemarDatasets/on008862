@@ -1,0 +1,30 @@
+{
+  "Description": "Acoustic characterization of the two released soundscape stimuli, measured on the exact .wav files in this folder.",
+  "duration_s": {
+    "Description": "Duration in seconds."
+  },
+  "sample_rate_hz": {
+    "Description": "Sampling rate of the audio file."
+  },
+  "channels": {
+    "Description": "Number of audio channels."
+  },
+  "integrated_loudness_lufs": {
+    "Description": "Programme loudness, EBU R128 / ITU-R BS.1770 integrated, in LUFS. The two clips differ by 5.43 LU; they were presented as delivered, without normalization or condition-specific gain."
+  },
+  "peak_dbfs": {
+    "Description": "Maximum absolute sample value in dB relative to full scale."
+  },
+  "rms_dbfs": {
+    "Description": "Root-mean-square level of the mono sum in dBFS."
+  },
+  "crest_factor_db": {
+    "Description": "Peak minus RMS, in dB; higher values indicate a more transient, less dense signal."
+  },
+  "spectral_centroid_hz": {
+    "Description": "Mean spectral centroid over 2048-sample Hann frames; higher values correspond to a brighter timbre."
+  },
+  "md5": {
+    "Description": "MD5 checksum of the audio file as released."
+  }
+}

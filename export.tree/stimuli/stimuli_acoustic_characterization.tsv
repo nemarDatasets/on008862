@@ -1,0 +1,3 @@
+stim_file	duration_s	sample_rate_hz	channels	integrated_loudness_lufs	peak_dbfs	rms_dbfs	crest_factor_db	spectral_centroid_hz	md5
+jungle.wav	16.895	48000	2	-12.74	-1.37	-17.22	15.85	1484.7	793d48eb32b0fc300918d21a0c401680
+deconstruct.wav	17.193	48000	2	-18.17	-3.33	-20.55	17.22	2525.0	18f8d4da9c2eb553e171e36de1b41a22
