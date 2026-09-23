@@ -1,0 +1,16 @@
+{
+  "Name": "EEG and hedonic responses to sonic-seasoning soundscapes",
+  "BIDSVersion": "1.9.0",
+  "DatasetType": "raw",
+  "License": "CC0",
+  "Authors": [
+    "Attila Pohlmann",
+    "Felipe Reinoso-Carvalho",
+    "Brayan Rodríguez"
+  ],
+  "Acknowledgements": "",
+  "HowToAcknowledge": "Please cite the associated Data in Brief article and this dataset.",
+  "EthicsApprovals": [
+    "Comité de Ética de Investigación en Seres Humanos, Universidad San Francisco de Quito (CEISH-USFQ); approval Oficio N° 078-2022-CA-P22-053M-CEISH-USFQ"
+  ]
+}
