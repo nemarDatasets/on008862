@@ -1,0 +1,5 @@
+onset	duration	trial_type	stim_file
+3.0	202.134	eyes_open	n/a
+211.133	49.05	eyes_closed	n/a
+266.188	17.0	jungle	jungle.wav
+289.188	17.0	deconstruct	deconstruct.wav

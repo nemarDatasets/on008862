@@ -1,0 +1,16 @@
+{
+  "Name": "EEGLAB-ready per-condition segments (jungle, deconstruct)",
+  "BIDSVersion": "1.9.0",
+  "DatasetType": "derivative",
+  "GeneratedBy": [
+    {
+      "Name": "custom script",
+      "Description": "Per-condition 17s soundscape segments as EEGLAB .set; single task 'soundscape', condition in acq- label and EEG.condition field."
+    }
+  ],
+  "SourceDatasets": [
+    {
+      "URL": "../../"
+    }
+  ]
+}

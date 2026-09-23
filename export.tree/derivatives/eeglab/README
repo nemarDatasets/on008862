@@ -1,0 +1,74 @@
+EEGLAB-ready derivatives — jungle vs. deconstruct soundscape segments
+=====================================================================
+
+WHAT THIS FOLDER IS
+-------------------
+A convenience layer for EEGLAB / MATLAB users. The raw dataset (repository root)
+stores each participant's recording as ONE combined EDF containing the resting
+baseline (eyes-open, eyes-closed) and both ~17 s soundscape exposures, with the
+segments marked in the root *_events.tsv. EEGLAB's STUDY designer does not read
+within-file segments as conditions, so here the two soundscape conditions are
+pre-split into EEGLAB-native .set files that import directly with conditions intact.
+
+Users of MNE-Python or other tools should ignore this folder and use the RAW data
+at the repository root (combined EDF + events.tsv), reconstructing conditions as
+they wish. The raw root is the canonical dataset; these derivatives are optional.
+
+WHAT IS HERE
+------------
+  sub-NN/eeg/sub-NN_task-soundscape_acq-jungle_eeg.set
+  sub-NN/eeg/sub-NN_task-soundscape_acq-deconstruct_eeg.set
+  study_plots_NOPATHS.m          <- copy-paste analysis/plotting script
+  dataset_description.json
+
+IMPORTANT: both .set files per participant share the SAME task ('soundscape').
+The jungle/deconstruct distinction is carried ONLY by the BIDS 'acq-' label and
+the EEG.condition field inside each file. This makes 'condition' the single
+categorical STUDY variable (levels: jungle, deconstruct). There is NO 'task'
+design variable — do not add one.
+
+The analysis unit is the WHOLE ~17 s segment per condition (1 'trial' per .set),
+average reference, raw + 0.5 Hz high-pass (inherited from the raw release).
+Baselines (eyes-open/closed) are intentionally excluded here (not part of the
+jungle-vs-deconstruct design); they remain in the raw combined EDFs at the root.
+
+=====================================================================
+QUICK PATH (recommended) — load as a STUDY, then run the script
+=====================================================================
+1. Start EEGLAB in MATLAB:   >> eeglab
+2. File > Import data > Using EEGLAB functions and plugins > From BIDS folder,
+   OR File > Load existing dataset(s) and select all the .set files in this folder.
+   (Either way, the datasets load into ALLEEG.)
+3. (Optional) File > Create study using all loaded datasets, so EEGLAB reads the
+   'condition' and 'subject' fields automatically.
+4. Copy the ENTIRE contents of study_plots_NOPATHS.m and paste into the MATLAB
+   Command Window. It operates on whatever is in memory (ALLEEG) — NO file paths
+   needed — and produces:
+       Figure 1 : Jungle alpha topoplot
+       Figure 2 : Deconstruct alpha topoplot (same colour scale)
+       Figure 3 : Grand-average spectra overlay (jungle vs deconstruct)
+       Figure 4 : Descriptives table — relative band power %, mean (SE), all 5 bands
+   To view a different band, change PLOT_BAND at the top of the script
+   (delta / theta / alpha / beta / gamma) and re-run.
+
+=====================================================================
+BUILDING A STUDY DESIGN BY HAND (if you prefer the GUI)
+=====================================================================
+1. Load all .set files (step 2 above).
+2. Study > Edit study design > Add variable:
+       Independent variable 1 = 'condition'  (Categorical)
+       values: deconstruct, jungle
+       Leave the second variable as 'None'.  (This is the ONLY design variable.)
+3. Study > Precompute channel measures > Power spectrum (spec).
+4. Study > Plot channel measures > Spectra, with "plot condition difference" on.
+5. Statistics (within-subject): Study > statistics > paired, on the variable
+   'condition' (jungle vs deconstruct).
+
+NOTES
+-----
+- topoplot needs channel coordinates; the script fills them via EEGLAB's standard
+  montage lookup automatically. If it can't find the montage file, do
+  Edit > Channel locations > "Look up locs" once in the GUI, then re-run.
+- For publication-grade figures, MNE-Python's topographies look nicer; EEGLAB here
+  is for convenient analysis. Either tool reads the same underlying data.
+- Requires the Signal Processing Toolbox (pwelch) for the script.

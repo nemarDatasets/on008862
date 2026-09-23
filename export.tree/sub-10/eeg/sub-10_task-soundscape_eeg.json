@@ -1,0 +1,21 @@
+{
+  "TaskName": "soundscape",
+  "EEGReference": "sequential CMS/DRL (EMOTIV EPOC X)",
+  "SamplingFrequency": 128,
+  "PowerLineFrequency": 60,
+  "SoftwareFilters": "n/a",
+  "HardwareFilters": {
+    "BandPass": {
+      "Description": "EMOTIV EPOC X built-in ~0.16-43 Hz"
+    }
+  },
+  "Manufacturer": "EMOTIV",
+  "ManufacturersModelName": "EPOC X",
+  "EEGChannelCount": 14,
+  "EOGChannelCount": 0,
+  "ECGChannelCount": 0,
+  "EMGChannelCount": 0,
+  "MiscChannelCount": 33,
+  "RecordingType": "continuous",
+  "TaskDescription": "Resting calibration (eyes-open, eyes-closed) and brief (~17 s) isolated exposure to two soundscapes (jungle, deconstruct), always in that fixed order; segments concatenated with ~3 s margins, see events.tsv. In addition to the 14 EEG channels the file carries the manufacturer's per-channel contact-quality (CQ_*) and EEG-quality (EQ_*) indices, the two overall indices, CMS/DRL contact quality and sample-rate quality, all at 128 Hz; see channels.tsv."
+}
