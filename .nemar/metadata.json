@@ -1,29 +1,79 @@
 {
   "version": "2.0",
-  "dataset_id": "on008862",
-  "source": "openneuro",
-  "source_id": "ds008862",
+  "pipeline_stage": "validated",
   "title": "EEG and hedonic responses to sonic-seasoning soundscapes",
+  "license": "CC0",
+  "dataset_type": "raw",
   "authors": {
     "Attila Pohlmann": {},
     "Felipe Reinoso-Carvalho": {},
     "Brayan Rodríguez": {}
   },
-  "license": "CC0",
-  "dataset_type": "raw",
   "related_identifiers": [
     {
       "identifier": "10.18112/openneuro.ds008862.v1.0.0",
       "identifier_type": "DOI",
-      "relation_type": "IsIdenticalTo"
+      "relation_type": "IsDerivedFrom"
+    },
+    {
+      "identifier": "https://github.com/nemarDatasets/on008862",
+      "identifier_type": "URL",
+      "relation_type": "IsDescribedBy"
+    },
+    {
+      "identifier": "https://nemar.org/dataset/on008862",
+      "identifier_type": "URL",
+      "relation_type": "IsDescribedBy"
     }
   ],
-  "pipeline_stage": "seeded",
-  "bids_version": "1.9.0",
-  "recording_modality": [
+  "resource_type_general": "Dataset",
+  "modalities": [
     "eeg"
   ],
-  "datatypes": [
-    "eeg"
-  ]
+  "resource_type_specific": "EEG Dataset",
+  "sizes": [
+    "53.37 MB (94 files)"
+  ],
+  "formats": [
+    ".edf",
+    ".json",
+    ".m",
+    ".md",
+    ".set",
+    ".tsv",
+    ".wav",
+    ".yml"
+  ],
+  "description": "This dataset contains EEG recordings and hedonic (liking) ratings collected while participants listened to sonic-seasoning soundscapes (jungle and deconstruct conditions), alongside eyes-open and eyes-closed resting baselines. Data were recorded with a 14-channel EMOTIV EPOC X device, including manufacturer-derived signal quality channels, and are accompanied by participant survey items and stimulus audio files. The dataset supports investigation of how auditory soundscapes modulate neural activity and subjective taste/flavor perception.",
+  "methods_description": "EEG was recorded using the EMOTIV EPOC X device (14 EEG channels) with only the manufacturer's hardware bandpass filter applied, no additional software filtering. Each recording included eyes-open and eyes-closed resting baselines followed by ~17 s exposures to jungle and deconstruct soundscapes, presented in a fixed, non-counterbalanced order. Continuous quality metrics (contact quality and EEG quality indices) were logged alongside the EEG channels at 128 Hz. Data are provided as raw EDF files at the repository root, with an additional EEGLAB-ready derivative for the soundscape conditions.",
+  "keywords": [
+    {
+      "term": "EEG"
+    },
+    {
+      "term": "soundscape"
+    },
+    {
+      "term": "hedonic perception"
+    },
+    {
+      "term": "sonic seasoning"
+    },
+    {
+      "term": "auditory stimulation"
+    },
+    {
+      "term": "EMOTIV EPOC X"
+    },
+    {
+      "term": "flavor perception"
+    },
+    {
+      "term": "taste perception"
+    },
+    {
+      "term": "resting-state EEG"
+    }
+  ],
+  "source_hash": "7680e25997f866c1e2bbc6ff504ddd3ae1cc3311996ed58bc1de505c1211ba28"
 }
