@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "pipeline_stage": "validated",
+  "pipeline_stage": "enriched",
   "title": "EEG and hedonic responses to sonic-seasoning soundscapes",
   "license": "CC0",
   "dataset_type": "raw",
@@ -24,6 +24,11 @@
       "identifier": "https://nemar.org/dataset/on008862",
       "identifier_type": "URL",
       "relation_type": "IsDescribedBy"
+    },
+    {
+      "identifier": "10.82901/nemar.on008862",
+      "identifier_type": "DOI",
+      "relation_type": "IsSupplementTo"
     }
   ],
   "resource_type_general": "Dataset",
@@ -44,8 +49,8 @@
     ".wav",
     ".yml"
   ],
-  "description": "This dataset contains EEG recordings and hedonic (liking) ratings collected while participants listened to sonic-seasoning soundscapes (jungle and deconstruct conditions), alongside eyes-open and eyes-closed resting baselines. Data were recorded with a 14-channel EMOTIV EPOC X device, including manufacturer-derived signal quality channels, and are accompanied by participant survey items and stimulus audio files. The dataset supports investigation of how auditory soundscapes modulate neural activity and subjective taste/flavor perception.",
-  "methods_description": "EEG was recorded using the EMOTIV EPOC X device (14 EEG channels) with only the manufacturer's hardware bandpass filter applied, no additional software filtering. Each recording included eyes-open and eyes-closed resting baselines followed by ~17 s exposures to jungle and deconstruct soundscapes, presented in a fixed, non-counterbalanced order. Continuous quality metrics (contact quality and EEG quality indices) were logged alongside the EEG channels at 128 Hz. Data are provided as raw EDF files at the repository root, with an additional EEGLAB-ready derivative for the soundscape conditions.",
+  "description": "This dataset contains EEG recordings from participants exposed to sonic-seasoning soundscapes (jungle and deconstruct conditions) alongside eyes-open and eyes-closed resting baselines, collected using EMOTIV EPOC X hardware. It includes liking ratings, baseline-state survey items, and stimulus audio files, aiming to examine hedonic responses to soundscapes designed to modulate taste perception. The dataset also provides per-channel and overall signal quality metrics for quality-based screening of EEG data.",
+  "methods_description": "EEG was recorded with EMOTIV EPOC X hardware (14 EEG channels) with manufacturer bandpass filtering only, no additional software filtering. Recordings included eyes-open and eyes-closed resting baselines followed by ~17 s exposures to jungle and deconstruct soundscapes, presented in a fixed, non-counterbalanced order. Each EDF file also contains continuously logged contact- and EEG-quality channels sampled at 128 Hz. A processed, EEGLAB-ready derivative dataset containing only the 14 EEG channels for the soundscape conditions is also provided.",
   "keywords": [
     {
       "term": "EEG"
@@ -63,16 +68,7 @@
       "term": "auditory stimulation"
     },
     {
-      "term": "EMOTIV EPOC X"
-    },
-    {
-      "term": "flavor perception"
-    },
-    {
-      "term": "taste perception"
-    },
-    {
-      "term": "resting-state EEG"
+      "term": "resting state EEG"
     }
   ],
   "source_hash": "7680e25997f866c1e2bbc6ff504ddd3ae1cc3311996ed58bc1de505c1211ba28"
